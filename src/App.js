@@ -1,9 +1,26 @@
+
+
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
+import LoginScreen from "./screen/LoginScreen";
 import NotesScreen from "./screen/NotesScreen";
 
-function App() {
+const router = createBrowserRouter([
+  /*{
+    path: "/",
+    element : <LoginScreen/>,
+  },*/
+  {
+    path: "/",
+    element: <NotesScreen/>,
+  },
+])
+
+
+const App = () => {
   return (
-    <NotesScreen/>
+      <RouterProvider router = {router}/>
+      
   );
 }
 

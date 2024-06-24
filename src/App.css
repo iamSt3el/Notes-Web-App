@@ -1,36 +1,35 @@
-.notes-page{
-  background-color: #686D76;
-  padding: 1px;
+@import url(https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css);
+
+body {
+  background-color: #686d76;
+}
+.container {
   display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.note-block{
+.notes-page {
+  position: relative;
+  padding: 1px;
+  display: flex;
+  flex-direction: row;
+}
+
+.note-block {
   color: white;
   position: relative;
   background-color: #151515;
   flex: 1;
+  min-height: 84vh;
   width: 65vw;
   overflow: auto;
   margin-left: 1vw;
   margin-right: 1vw;
-  margin-top: 4vh ;
-  padding: 4vh ;
+  margin-top: 3vh;
+  padding: 4vh;
   margin-bottom: 10vh;
-  border-radius: 4vh;
-}
-
-.index-list{
-  position: sticky;
-  top: 0;
-  background-color: #151515;
-  color: white;
-  text-align: center;
-  flex: 0 0 15%;
-  height: 90vh;
-  margin-left: 1vw;
-  border-radius: 4vh;
-  padding: 1vh;
-  margin-top: 4vh;
+  border-radius: 30px;
 }
 
 table {
@@ -42,4 +41,247 @@ th,
 td {
   padding: 10px;
   border: 1px solid #ddd;
+}
+
+.sidebar {
+  display: none;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5px;
+  margin: 0;
+  padding: 40px 20px 0 0;
+}
+
+.sidebar ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  display: block;
+  position: relative;
+  top: -4vh;
+  left: 3vw;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+  font-weight: 500;
+}
+
+.sidebar ul li a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 1px;
+  background: #4caf50;
+  z-index: -1;
+  transition: all 0.3s ease-out;
+}
+
+.sidebar ul li a:hover:before {
+  width: 100%;
+}
+
+.sidebar ul li a:hover {
+  color: #4caf50;
+}
+
+.sidebarshow {
+  left: 1vw;
+  display: flex;
+  align-items: center;
+  background-color: #151515;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  width: 210px;
+  position: sticky;
+  height: 90vh;
+  margin-top: 3vh;
+  margin-right: 3vh;
+  border-radius: 30px;
+  overflow-y: auto;
+  scrollbar-gutter: stable both-edges;
+  top: 0;
+
+
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.folder-name {
+  color: #4caf50;
+  font-size: 1.5rem;
+}
+
+.nav-bar {
+  display: flex;
+  background-color: #151515;
+  height: 50px;
+  position: sticky;
+  border-radius: 20px;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.nav-button {
+  position: relative;
+  left: 20px;
+  top: 10px;
+}
+
+button {
+  background: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.toggle span {
+  width: 100%;
+  height: 3px;
+  background: #555;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle span::before,
+.toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #555;
+  transition: all 0.3s ease-out;
+}
+
+.toggle span:before {
+  top: -8px;
+}
+
+.toggle span::after {
+  top: 8px;
+}
+
+.toggle span.toggle {
+  background: transparent;
+}
+
+.toggle span.toggle::before {
+  top: 0;
+  transform: rotate(-45deg);
+  background: #4caf50;
+}
+.toggle span.toggle:after {
+  top: 0;
+  transform: rotate(45deg);
+  background: #4caf50;
+}
+
+/* Login Screen */
+
+.login-screen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  color: white;
+  background-color: #151515;
+  width: 400px;
+  height: 500px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box h1 {
+  position: relative;
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  top: 30px;
+  left: 30px;
+  font-size: 3rem;
+}
+
+.login-box p {
+  position: relative;
+  top: 200px;
+  left: 20px;
+  font-size: large;
+}
+
+.login-input {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 400px;
+  top: 200px;
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 240px;
+}
+
+.login-button button {
+  width: 85px;
+  height: 35px;
+}
+
+@media (max-width: 768px) {
+  .note-block {
+    width: 90vw;
+  }
+
+  .sidebarshow {
+    position: absolute;
+    z-index: 100;
+    border: 2px solid white;
+  }
+
+  .folder-name{
+    font-size: 1.2rem;
+  }
+
+  .login-box {
+    width: 90vw;
+  }
+
+  .login-input {
+    width: 90vw;
+  }
 }
