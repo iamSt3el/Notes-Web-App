@@ -1,0 +1,2 @@
+- # Never use class in html tags(Its make the css lengthy).
+- 
